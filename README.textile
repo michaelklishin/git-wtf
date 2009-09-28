@@ -17,10 +17,10 @@ Feature branches:
 h3. Installation
 
 <code>$ make git-alias</code>
-(makes <code>$ git wtf</code> work
+_(makes <code>$ git wtf</code> work)_
 
 <code>$ make git-sh-alias</code>
-(makes <code>master!repo> wtf</code> work in git-sh:http://github.com/rtomayko/git-sh/ console
+_(makes <code>master!repo> wtf</code> work in "git-sh":http://github.com/rtomayko/git-sh/ console)_
 
 or just:
 
@@ -29,4 +29,4 @@ to perform both actions.
 
 Then:
 <code>sudo make install</code>
-(obviously, installs git-wtf script into your /usr/local/bin directory)
+_(obviously, installs git-wtf script into your /usr/local/bin directory)_
