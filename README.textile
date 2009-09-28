@@ -1,0 +1,32 @@
+h2. git-wtf
+
+A useful script that displays local & remote branches, what are in sync and what need merging,
+and so on, like so:
+
+<pre>Local branch: heads/master
+[x] in sync with remote
+
+Remote branch: origin/master (git@github.com:account/project.git)
+[x] in sync with local
+
+Feature branches:
+[x] ticket_827 is merged in
+[ ] ticket_831 is NOT merged in (1 commit ahead; 18 commits behind)
+    - [dependencies] Depend on library X, version Y [bfda321]</pre>
+
+h3. Installation
+
+<code>$ make git-alias</code>
+(makes <code>$ git wtf</code> work
+
+<code>$ make git-sh-alias</code>
+(makes <code>master!repo> wtf</code> work in git-sh:http://github.com/rtomayko/git-sh/ console
+
+or just:
+
+<code>$ make</code>
+to perform both actions.
+
+Then:
+<code>sudo make install</code>
+(obviously, installs git-wtf script into your /usr/local/bin directory)
