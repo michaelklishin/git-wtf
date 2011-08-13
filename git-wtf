@@ -174,7 +174,16 @@ def show b, all_branches
   puts "\nWARNING: local and remote branches have diverged. A merge will occur unless you rebase." if both
 end
 
-branches = `git show-ref`.inject({}) do |hash, l|
+#Required for Ruby 1.9+ as string arrays are handled differently
+unless String.method_defined?(:lines) then
+  class String
+    def lines
+      to_a
+    end
+  end
+end
+
+branches = `git show-ref`.lines.to_a.inject({}) do |hash, l|
   sha1, ref = l.chomp.split " refs/"
   next hash if $config["ignore"].member? ref
   next hash unless ref =~ /^heads\/(.+)/
@@ -183,13 +192,13 @@ branches = `git show-ref`.inject({}) do |hash, l|
   hash
 end
 
-remotes = `git config --get-regexp ^remote\.\*\.url`.inject({}) do |hash, l|
+remotes = `git config --get-regexp ^remote\.\*\.url`.lines.to_a.inject({}) do |hash, l|
   l =~ /^remote\.(.+?)\.url (.+)$/ or next hash
   hash[$1] ||= $2
   hash
 end
 
-`git config --get-regexp ^branch\.`.each do |l|
+`git config --get-regexp ^branch\.`.lines.to_a.each do |l|
   case l
   when /branch\.(.*?)\.remote (.+)/
     next if $2 == '.'
