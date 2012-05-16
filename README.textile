@@ -1,32 +1,11 @@
 h2. git-wtf
 
-A useful script that displays local & remote branches, what are in sync and what need merging,
-and so on, like so:
+h3. Maintenance
 
-<pre>Local branch: heads/master
-[x] in sync with remote
+Current (?) known maintainer: William Morgan
+Information page: http://git-wt-commit.rubyforge.org/#git-wtf
+Gitorious repository: https://gitorious.org/willgit/mainline
+Homebrew formula: https://github.com/mxcl/homebrew/blob/master/Library/Formula/willgit.rb 
+(installation through homebrew is apparently supported)
 
-Remote branch: origin/master (git@github.com:account/project.git)
-[x] in sync with local
-
-Feature branches:
-[x] ticket_827 is merged in
-[ ] ticket_831 is NOT merged in (1 commit ahead; 18 commits behind)
-    - [dependencies] Depend on library X, version Y [bfda321]</pre>
-
-h3. Installation
-
-<code>$ make git-alias</code>
-_(makes <code>$ git wtf</code> work)_
-
-<code>$ make git-sh-alias</code>
-_(makes <code>master!repo> wtf</code> work in "git-sh":http://github.com/rtomayko/git-sh/ console)_
-
-or just:
-
-<code>$ make</code>
-to perform both actions.
-
-Then:
-<code>sudo make install</code>
-_(obviously, installs git-wtf script into your /usr/local/bin directory)_
+<code>git-wtf</code> is not maintained here. The last known and maintained version of <code>git-wtf</code> can be found on gitorious. Pull requests and issues should be sent to the main repository.
